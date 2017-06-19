@@ -1,0 +1,40 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>FinancialsUpload</servlet-name>
+  	<display-name>FinancialsUpload</display-name>
+  	<description></description>
+  	<servlet-class>com.company.dataanalysis.controller.FinancialsUpload</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>FinancialsDashboard</servlet-name>
+  	<display-name>FinancialsDashboard</display-name>
+  	<description></description>
+  	<servlet-class>com.company.dataanalysis.controller.FinancialsDashboard</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>FinancialsHomepage</servlet-name>
+  	<display-name>FinancialsHomepage</display-name>
+  	<description></description>
+  	<servlet-class>com.company.dataanalysis.controller.FinancialsHomepage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>FinancialsUpload</servlet-name>
+  	<url-pattern>/FinancialsUpload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>FinancialsDashboard</servlet-name>
+  	<url-pattern>/FinancialsDashboard</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>FinancialsHomepage</servlet-name>
+  	<url-pattern>/FinancialsHomepage</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>  
+   <welcome-file>home.jsp</welcome-file>  
+  </welcome-file-list>  
+</web-app>
