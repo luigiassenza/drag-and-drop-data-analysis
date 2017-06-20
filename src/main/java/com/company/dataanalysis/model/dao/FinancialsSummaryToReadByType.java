@@ -1,5 +1,6 @@
 package com.company.dataanalysis.model.dao;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import com.company.dataanalysis.model.dto.FinancialsDetail;
@@ -7,8 +8,8 @@ import com.company.dataanalysis.model.dto.FinancialsDetailSummaryByType;
 
 	public class FinancialsSummaryToReadByType {
 		
-		public ArrayList<FinancialsDetailSummaryByType> summaryByType() {
-		
+		public ArrayList<FinancialsDetailSummaryByType> summaryByType() throws FileNotFoundException, InterruptedException {
+			 
 			//Read csv file
 			ArrayList<FinancialsDetail> data = new FinancialsToRead().readData();
 			

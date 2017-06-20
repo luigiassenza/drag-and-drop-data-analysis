@@ -1,5 +1,6 @@
 package com.company.dataanalysis.model.dao;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,7 +21,7 @@ public class FinancialsToRead {
 	}
 	
 	
-	public ArrayList<FinancialsDetail> readData() {
+	public ArrayList<FinancialsDetail> readData() throws FileNotFoundException, InterruptedException {
 		
 		String filePath = new FinancialsFilePath().filePath(); //Read file name from directory
 		
@@ -52,7 +53,7 @@ public class FinancialsToRead {
 	}
 	
 	//Temporay data for testing
-	public static void main(String[] args) throws ParseException {
+	public static void main(String[] args) throws ParseException, FileNotFoundException, InterruptedException {
 		ArrayList<FinancialsDetail> data = new FinancialsToRead().readData();
 		
 		

@@ -54,6 +54,8 @@
 				document.location.href='./FinancialsDashboard';
 			};
 			
+			
+			
 			dropzone.ondragover = function() {
 				this.className = "dropzone dragover";
 				return false;

@@ -17,13 +17,19 @@ import com.company.dataanalysis.model.dto.FinancialsDetailSummaryByType;
 public class FinancialsDashboard extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<FinancialsDetailSummaryByType> summaryByType = new FinancialsSummaryToReadByType().summaryByType();
-		request.setAttribute("summaryByType", summaryByType);
+		ArrayList<FinancialsDetailSummaryByType> summaryByType;
+		try {
+			summaryByType = new FinancialsSummaryToReadByType().summaryByType();
+			request.setAttribute("summaryByType", summaryByType);
+			
+			ArrayList<FinancialsDetailSummaryByDescription> summaryByDescription = new FinancialsSummaryToReadByDescription().summaryByDescription();
+			request.setAttribute("summaryByDescription", summaryByDescription);
+			
+			request.getRequestDispatcher("dashboard.jsp").forward(request, response);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		
-		ArrayList<FinancialsDetailSummaryByDescription> summaryByDescription = new FinancialsSummaryToReadByDescription().summaryByDescription();
-		request.setAttribute("summaryByDescription", summaryByDescription);
-		
-		request.getRequestDispatcher("dashboard.jsp").forward(request, response);
 	}
 
 	
